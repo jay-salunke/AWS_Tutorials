@@ -1,6 +1,9 @@
 <?php
 require_once 'config/database.php';
 
+// Load environment variables
+loadEnv();
+
 try {
     $conn = getDBConnection();
 

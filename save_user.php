@@ -1,13 +1,8 @@
 <?php
-$host = 'database-1.cvkeq04gcavr.ap-south-1.rds.amazonaws.com';
-$dbname = 'user_management';
-$username = 'admin';
-$password = 'your_password_here'; // Replace with your actual password
+require_once 'config/database.php';
 
 try {
-    // Create database connection
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = getDBConnection();
 
     // Get form data
     $first_name = $_POST['first_name'];
